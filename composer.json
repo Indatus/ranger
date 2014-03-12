@@ -1,0 +1,44 @@
+{
+    "name": "indatus/ranger",
+    "description": "This package adds some power to your api rest server by allowing you to specify joins and eager loaded associations using http query parameters",
+    "type": "library",
+    "homepage": "http://indatus.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Webb",
+            "email": "bwebb@indatus.com",
+            "name": "Charles Griffin",
+            "email": "cgriffin@indatus.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.1.*",
+        "illuminate/container": "4.1.*@dev",
+        "illuminate/database": "4.1.*@dev",
+        "illuminate/view": "4.1.*@dev",
+        "illuminate/routing": "4.1.*@dev"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master@dev",
+        "phpunit/phpunit": "3.7.*@dev"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Indatus\\Ranger": "src/"
+        },
+
+        "classmap": [
+            
+            "tests"
+        ],
+
+        "files" : [
+            "src/Indatus/Ranger/Support/helpers.php"
+        ]
+    },
+
+    "minimum-stability": "dev"
+}

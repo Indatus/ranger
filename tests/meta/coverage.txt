@@ -1,0 +1,42 @@
+
+
+Code Coverage Report 
+  2014-03-10 22:01:31
+
+ Summary: 
+  Classes: 89.47% (17/19)
+  Methods: 85.00% (17/20)
+  Lines:   93.48% (129/138)
+
+\Indatus\Ranger::ApiBaseController
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  7/  7)
+\Indatus\Ranger\ApiDatabase::ResponseHandler
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+\Indatus\Ranger\ApiDatabase\QueryBuilding::EagerLoads
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
+\Indatus\Ranger\ApiDatabase\QueryBuilding::Joins
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  8/  8)
+\Indatus\Ranger\ApiDatabase\QueryBuilding::LeftJoins
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  8/  8)
+\Indatus\Ranger\ApiDatabase\QueryBuilding::Searcher
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 13/ 13)
+\Indatus\Ranger\ApiDatabase\QueryExecution::CollectionQuery
+  Methods:  20.00% ( 1/ 5)   Lines: 100.00% (  6/  6)
+\Indatus\Ranger\ApiDatabase\QueryExecution::InstanceQuery
+  Methods:  28.57% ( 2/ 7)   Lines: 100.00% (  2/  2)
+\Indatus\Ranger\ContentType::HtmlContentType
+  Methods:  25.00% ( 1/ 4)   Lines:  85.71% (  6/  7)
+\Indatus\Ranger\ContentType::JsonContentType
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Indatus\Ranger\ContentType\HtmlView::ViewManager
+  Methods:  66.67% ( 2/ 3)   Lines:  95.12% ( 39/ 41)
+\Indatus\Ranger\HttpRequestHandler::HttpDelete
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
+\Indatus\Ranger\HttpRequestHandler::HttpGet
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+\Indatus\Ranger\HttpRequestHandler::HttpMethod
+  Methods:  50.00% ( 1/ 2)   Lines: 100.00% (  4/  4)
+\Indatus\Ranger\HttpRequestHandler::HttpPost
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+\Indatus\Ranger\HttpRequestHandler::HttpPut
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
