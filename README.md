@@ -2,7 +2,12 @@
 
 The Api Base Controller is a Laravel package that allows you to get your api up and running fast.  The process of creating an api can be very tedious, especially when you consider how validation, errors, and response codes will be handled.  Instead of this tedium, install ranger, extend the ApiBaseController (see [examples](#examples) below), and that's it.  If you feel that you want this more tailored to your needs, Ranger follows the Open/Closed principle so extending the core components is really easy.
 
-Ranger allows for searching, eager loading, and joins out of the box.
+Ranger allows for:
+
+**Searching**<br />
+**Eager Loading**<br />
+**Joins**<br />
+**Left Joins**<br />
 
 Ranger also has support for both Nested and Non-nested resources.  It handles Json and HTML content types but can easily be extended for other content types as well. 
 
@@ -10,7 +15,7 @@ Ranger also has support for both Nested and Non-nested resources.  It handles Js
 
 <img height="300" src="https://s3.amazonaws.com/uploads.hipchat.com/64994/458588/F6THwLZW7VsJCP1/RangerReadMe.png"><br />
 
-<a id="top" />
+<a name="top" />
 ## README Contents
     
 * [Installation](#installation)
@@ -33,7 +38,7 @@ Ranger also has support for both Nested and Non-nested resources.  It handles Js
     * [Join example](#join-example)
     * [Search example](#search-example)
 
-<a id="installation" />
+<a name="installation" />
 ## Installation
 Install With Composer
 
@@ -47,7 +52,7 @@ Next run `composer install`
 
 [Back To Top](#top)
 
-<a id="config-laravel" />
+<a name="config-laravel" />
 ## Configure in Laravel
 
 Currently Ranger works **Only** with the Laravel framework.  However, we do have plans to make this package framework agnostic.  
@@ -67,7 +72,7 @@ That's all.  Now you can start using Ranger.  Checkout the [**Examples**](#examp
 ****
 [Back To Top](#top)
 
-<a id="config" />
+<a name="config" />
 ## Configuration Options
 
 **Ranger Settings (ranger.php)**
@@ -90,10 +95,10 @@ I'm assuming that you have taken the appropriate steps in setting up Eloquent mo
 The examples in this documentation are directly from the example app, in the repo above.  Two entities are created User and Account.
 
 [Back To Top](#top)
-<a id="examples" />
+<a name="examples" />
 ## Examples
 
-<a id="non-nested-resource-example" />
+<a name="non-nested-resource-example" />
 ## Non-Nested Resource Example
 **Here's an example of a non-nested resource**
 
@@ -162,7 +167,7 @@ class UsersController extends Indatus\Ranger\ApiBaseController {
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="non-nested-resource-routes" />
+<a name="non-nested-resource-routes" />
 **Next, let's have a look at the routes file in app/routes.php**
 
 ```php
@@ -177,8 +182,8 @@ Route::group(['prefix' => 'v1'], function() {
 <br />
 <br />
 **Throughout this readme, I will assume the url of your code will be http://www.example.com**<br /><br />
-<a id="collection-example" />
-http://www.example.com/users GET Request will return a collection of all users in json format ie):
+<a name="collection-example" />
+http://www.example.com/v1/users GET Request will return a collection of all users in json format ie):
 
 ````
 {
@@ -204,8 +209,8 @@ http://www.example.com/users GET Request will return a collection of all users i
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="instance-example" />
-http://www.example.com/users/1 GET request will return a single user instance in json format ie):
+<a name="instance-example" />
+http://www.example.com/v1/users/1 GET request will return a single user instance in json format ie):
 
 ````
 {
@@ -222,8 +227,8 @@ http://www.example.com/users/1 GET request will return a single user instance in
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="post-example" />
-http://www.example.com/users POST request will add a user to the database and return:
+<a name="post-example" />
+http://www.example.com/v1/users POST request will add a user to the database and return:
 
 ````
 {
@@ -240,8 +245,8 @@ http://www.example.com/users POST request will add a user to the database and re
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="delete-example" />
-http://www.example.com/users/1 DELETE request will delete a single user instance and return the following:
+<a name="delete-example" />
+http://www.example.com/v1/users/1 DELETE request will delete a single user instance and return the following:
 
 ````
 {
@@ -252,8 +257,8 @@ http://www.example.com/users/1 DELETE request will delete a single user instance
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="put-example" />
-http://www.example.com/users/1 PUT request will update a single user instance and return the following:
+<a name="put-example" />
+http://www.example.com/v1/users/1 PUT request will update a single user instance and return the following:
 
 ````
 {
@@ -270,8 +275,8 @@ http://www.example.com/users/1 PUT request will update a single user instance an
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="eager-load-example" />
-http://www.example.com/users?eagerLoads[0]=accounts GET request will return all users along with their accounts:
+<a name="eager-load-example" />
+http://www.example.com/v1/users?eagerLoads[0]=accounts GET request will return all users along with their accounts:
 
 
 ````
@@ -318,7 +323,7 @@ http://www.example.com/users?eagerLoads[0]=accounts GET request will return all 
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="join-example" />
+<a name="join-example" />
 http://www.example.com/v1/users?joins[0]=accounts:users.id=accounts.user_id GET request will return all users along with their accounts joined:
 
 ````
@@ -351,7 +356,7 @@ http://www.example.com/v1/users?joins[0]=accounts:users.id=accounts.user_id GET 
 
 [Back To Top](#top)
 
-<a id="search-example" />
+<a name="search-example" />
 SEARCHING: http://www.example.com/v1/users?searchParams[property]=name&searchParams[operator]=like&searchParams[value]=%Ch%
 
 ````
@@ -373,7 +378,7 @@ SEARCHING: http://www.example.com/v1/users?searchParams[property]=name&searchPar
 ****
 [Back To Top](#top)
 
-<a id="nested-resource-example" />        
+<a name="nested-resource-example" />        
 ## Nested Resource Example
 **Here's an example of a nested resource controller**
 
@@ -486,7 +491,7 @@ class AccountsController extends Indatus\Ranger\ApiBaseController {
 <br />
 <br />
 [Back To Top](#top)<br /><br />
-<a id="nested-resource-routes" />
+<a name="nested-resource-routes" />
 **Next, let's have a look at the routes file in app/routes.php.** Nested resources are a little different
 
 ```php
@@ -505,11 +510,11 @@ Now you will be able to access the data in the same manner as the non nested res
 
 ```
 GET
-http://example.com/users/1/accounts
+http://example.com/v1/users/1/accounts
 returns all accounts for the user with id of 1
 
 GET
-http://example.com/users/1/accounts/1
+http://example.com/v1/users/1/accounts/1
 returns account with id of 1 for the user with id of one.  If the user doesn't own that account, then ModelNotFoundException (404 error) is thrown
 
 GET (with eager loads)
@@ -543,7 +548,7 @@ Adds an account for the given user
 
 [Back To Top](#top)
 
-<a id="security" />
+<a name="security" />
 ## Security
 
 SECURITY: Out of the box, we do not offer authentication to perform these operations.  **Authentication should be up to the developer to implement** because it's so specific to the application.  We feel, that we needed to make a statement about security because without it, anyone will have access to data on your api.
