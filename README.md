@@ -562,7 +562,8 @@ We are working on a sample app that will show you basic authentication.
 <a name="faq" />
 ## How to Solve Basic Problems
 
-## Problem: You are getting an InvalidInputException even though you sure your http request is working.
+## Problem: 
+You are getting an InvalidInputException even though you sure your http request is working.
 
 ##Solution
 
