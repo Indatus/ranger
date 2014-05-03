@@ -38,6 +38,8 @@ Ranger also has support for both Nested and Non-nested resources.  It handles Js
     * [Join example](#join-example)
     * [Search example](#search-example)
 
+* [How to Solve Basic Problems](#faq)
+
 <a name="installation" />
 ## Installation
 Install With Composer
@@ -544,8 +546,8 @@ Adds an account for the given user
 ```
 <br />
 <br />
-****
 
+****
 [Back To Top](#top)
 
 <a name="security" />
@@ -556,4 +558,40 @@ SECURITY: Out of the box, we do not offer authentication to perform these operat
 Keep in mind, this package takes away a lot of the pain points in developing an api, and you would have to write your own authentication on top of reinventing the api wheel. 
 
 We are working on a sample app that will show you basic authentication.
+****
+<a name="faq" />
+## How to Solve Basic Problems
+
+## Problem: You are getting an InvalidInputException even though you sure your http request is working.
+
+##Solution
+
+If you are trying to hit one of the api endpoints described above ie) example.com/api/users and get an InvalidInputException, this is most likely due to how you have your apache or nginx config setup.  
+
+If you are using apache, make sure that your .htaccess file looks like the following:
+
+```
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+```
+
+If you are using ngnix please refer to the following:
+
+```
+http://phawk.co.uk/blog/laravel-4-nginx-config/
+```
+
 ****
