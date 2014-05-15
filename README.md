@@ -1,5 +1,7 @@
 # Ranger
 
+[<img src="https://s3-us-west-2.amazonaws.com/oss-avatars/ranger.png"/>](http://indatus.com/company/careers)
+
 The Api Base Controller is a Laravel package that allows you to get your api up and running fast.  The process of creating an api can be very tedious, especially when you consider how validation, errors, and response codes will be handled.  Instead of this tedium, install ranger, extend the ApiBaseController (see [examples](#examples) below), and that's it.  If you feel that you want this more tailored to your needs, Ranger follows the Open/Closed principle so extending the core components is really easy.
 
 Ranger allows for:
@@ -13,7 +15,9 @@ Ranger also has support for both Nested and Non-nested resources.  It handles Js
 
 *****
 
+<!--
 <img height="300" src="https://s3.amazonaws.com/uploads.hipchat.com/64994/458588/F6THwLZW7VsJCP1/RangerReadMe.png"><br />
+-->
 
 <a name="top" />
 ## README Contents
